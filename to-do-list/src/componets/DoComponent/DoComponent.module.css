@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p {
+    margin: 5px;
+}
+.done {
+    text-decoration: line-through;
+    
+}
+.input {
+    display: block;
+}
