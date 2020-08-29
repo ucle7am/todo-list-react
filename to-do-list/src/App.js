@@ -5,7 +5,7 @@ import DoComponent from './componets/DoComponent/DoComponent';
 import AddComponent from './componets/AddComponent/AddComponent';
 
 function App(props) {
-  let doList = props.state.needToDo.map(el => <DoComponent deleteToDo={props.deleteToDo} toDoChange={props.toDoChange} id={el.id} key={el.id} todo={el.todo} done={el.done}/>)
+  let doList = props.state.needToDo.map(el => <DoComponent deleteToDo={props.deleteToDo} toDoChange={props.toDoChange} id={el.id} key={el.id} toDo={el.toDo} isDone={el.isDone}/>)
   return (
     <div className="App">
       <p>To Do List</p>

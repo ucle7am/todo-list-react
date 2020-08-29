@@ -3,19 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, { subscribe } from './state/state'
-import {toDoChange, deleteToDo, updateInput,addToDo} from './state/state'
+import store from './state/state'
 
-let renderFullPage = () => ReactDOM.render(
+store.checkLocalStorageState();
+
+let renderFullPage = (store) => ReactDOM.render(
   <React.StrictMode>
     {console.log('rendered')}
-    {localStorage.setItem('state', JSON.stringify(state))}
-    <App state={state} addToDo={addToDo} updateInput={updateInput} deleteToDo={deleteToDo} toDoChange={toDoChange}/>
+    {store.saveStateInLocalStorage()}
+    <App state={store.getState()} addToDo={store.addToDo.bind(store)} updateInput={store.updateInput.bind(store)}
+     deleteToDo={store.deleteToDo.bind(store)} toDoChange={store.toDoChange.bind(store)}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
-renderFullPage();
-subscribe(renderFullPage);
+
+renderFullPage(store);
+store.subscribe(renderFullPage);
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
