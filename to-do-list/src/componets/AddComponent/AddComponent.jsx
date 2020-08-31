@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './AddComponent.module.css'
-import {actionUpdateInput, actionAddToDo} from '../../state/state';
+import {actionUpdateInput, actionAddToDo} from '../../state/add-reducer';
 let AddComponent = (props) => {
     let refInput = React.createRef();
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './DoComponent.module.css'
-import {actionDeleteToDo, actionToDOChange} from '../../state/state';
+import {actionDeleteToDo, actionToDOChange} from '../../state/do-reducer';
 
 let DoComponent = (props) => {
     let toDoChange = (id) => {
