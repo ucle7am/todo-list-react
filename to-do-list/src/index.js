@@ -11,8 +11,7 @@ let renderFullPage = (store) => ReactDOM.render(
   <React.StrictMode>
     {console.log('rendered')}
     {store.saveStateInLocalStorage()}
-    <App state={store.getState()} addToDo={store.addToDo.bind(store)} updateInput={store.updateInput.bind(store)}
-     deleteToDo={store.deleteToDo.bind(store)} toDoChange={store.toDoChange.bind(store)}/>
+    <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
   </React.StrictMode>,
   document.getElementById('root')
 );

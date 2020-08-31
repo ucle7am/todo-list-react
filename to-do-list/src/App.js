@@ -5,12 +5,12 @@ import DoComponent from './componets/DoComponent/DoComponent';
 import AddComponent from './componets/AddComponent/AddComponent';
 
 function App(props) {
-  let doList = props.state.needToDo.map(el => <DoComponent deleteToDo={props.deleteToDo} toDoChange={props.toDoChange} id={el.id} key={el.id} toDo={el.toDo} isDone={el.isDone}/>)
+  let doList = props.state.needToDo.map(el => <DoComponent dispatch={props.dispatch} id={el.id} key={el.id} toDo={el.toDo} isDone={el.isDone}/>)
   return (
     <div className="App">
       <p>To Do List</p>
       {doList}
-      <AddComponent addToDo={props.addToDo} updateInput={props.updateInput} text={props.state.input}/>
+      <AddComponent dispatch={props.dispatch} text={props.state.input}/>
     </div>
   );
 }
