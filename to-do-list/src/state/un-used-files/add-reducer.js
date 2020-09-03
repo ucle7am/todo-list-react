@@ -1,7 +1,22 @@
 const UPDATE_INPUT = 'UPDATE-INPUT';
 const ADD_TO_DO = 'ADD-TO-DO';
 
-const addReducer = (state, action) => {
+const defaultState = {
+    input: '',
+    needToDo: [
+        {
+            id: 0,
+            toDo: 'buy bread',
+            isDone: false
+        },
+        {
+            id: 1,
+            toDo: 'buy meat',
+            isDone: false
+        }
+    ]
+}
+const addReducer = (state = defaultState, action) => {
     switch (action.type) {
         case ADD_TO_DO:
             state.needToDo.push(

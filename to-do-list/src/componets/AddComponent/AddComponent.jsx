@@ -1,7 +1,9 @@
 import React from 'react';
 import classes from './AddComponent.module.css'
-import {actionUpdateInput, actionAddToDo} from '../../state/add-reducer';
+import {actionUpdateInput, actionAddToDo} from '../../state/reducers';
+
 let AddComponent = (props) => {
+    
     let refInput = React.createRef();
 
     let update = () => {
